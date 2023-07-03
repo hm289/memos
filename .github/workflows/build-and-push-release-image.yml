@@ -27,8 +27,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: neosmemo
-          password: ${{ secrets.DOCKER_NEOSMEMO_TOKEN }}
+          username: hm289
+          password: ${{ secrets.DOCKER_HM289_TOKEN }}
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
