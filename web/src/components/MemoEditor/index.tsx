@@ -428,7 +428,7 @@ const MemoEditor = (props: Props) => {
             {state.fullscreen ? <Icon.Minimize className="icon-img" /> : <Icon.Maximize className="icon-img" />}
           </button>
           <button className="action-btn">
-            <Icon.languages className="icon-img" onClick={handleRTLBtnClick} />
+            <Icon.Languages className="icon-img" onClick={handleRTLBtnClick} />
           </button>
         </div>
       </div>
