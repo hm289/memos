@@ -3,7 +3,7 @@ name: build-and-push-release-image
 on:
   push:
     branches:
-      # Run on pushing branches like `release/1.0.0`
+      # Run on pushing branches like `release/1.0.0` 
       - "release/*.*.*"
 
 jobs:
