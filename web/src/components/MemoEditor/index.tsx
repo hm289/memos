@@ -372,6 +372,21 @@ const MemoEditor = (props: Props) => {
     editorRef.current?.focus();
   };
 
+  const handleRTLBtnClick = () => {
+    if (!editorRef.current) {
+      return;
+    }
+
+    const cursorPosition = editorRef.current.getCursorPosition();
+    const prevValue = editorRef.current.getContent().slice(0, cursorPosition);
+    if (prevValue === "" || prevValue.endsWith("\n")) {
+      editorRef.current?.insertText("", "<div dir='rtl'>\n", "\n</div>");
+    } else {
+      editorRef.current?.insertText("", "\n<div dir='rtl'>\n", "\n</div>");
+    }
+    editorRef.current?.scrollToCursor();
+  };
+
   const editorConfig = useMemo(
     () => ({
       className: `memo-editor`,
@@ -411,6 +426,9 @@ const MemoEditor = (props: Props) => {
           </button>
           <button className="action-btn" onClick={handleFullscreenBtnClick}>
             {state.fullscreen ? <Icon.Minimize className="icon-img" /> : <Icon.Maximize className="icon-img" />}
+          </button>
+          <button className="action-btn">
+            <Icon.languages className="icon-img" onClick={handleRTLBtnClick} />
           </button>
         </div>
       </div>
