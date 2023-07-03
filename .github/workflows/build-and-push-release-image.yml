@@ -49,8 +49,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            neosmemo/memos
-            ghcr.io/usememos/memos
+            hm289/memos
+            ghcr.io/hm289/memos
           tags: |
             type=raw,value=latest
             type=semver,pattern={{version}},value=${{ env.VERSION }}
